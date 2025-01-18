@@ -1,9 +1,12 @@
 export type Movie = {
   id: number;
   title: string;
+  release_date?: string;
+  year?: number;
   image: string;
-  genre: string[];
+  genre?: string[];
   rating: number;
+  description?: string;
 };
 
 export interface MovieSliderProps {

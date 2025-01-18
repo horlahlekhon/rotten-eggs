@@ -14,14 +14,14 @@ export const MovieTab: React.FC<MovieTabProps> = ({ title, link }) => {
   return (
     <div className="py-16">
       <div className="mb-6 flex justify-between items-center uppercase">
-        <h2 className="text-white text-2xl">{title}</h2>
+        <h2 className="text-white text-2xl font-bold">{title}</h2>
         <Link href={link} className="flex items-center">
           View all <ChevronRight size={14} />
         </Link>
       </div>
 
       <div className="tabs mb-10">
-        <ul className="tab-links max-lg:space-y-4 font-bold lg:flex lg:space-x-4">
+        <ul className="tab-links max-lg:space-y-4 font-bold lg:flex lg:space-x-4 uppercase">
           <li>
             <a href="#tab1">#Popular</a>
           </li>

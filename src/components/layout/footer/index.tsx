@@ -7,7 +7,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="pt-20 bg-[url('/images/ft-bg.jpg')]">
+    <div className="relative z-[1000] pt-20 bg-[url('/images/ft-bg.jpg')] font-nunito">
       {/* contains company or brand info */}
       <section className="p-3 lg:px-20 lg:grid grid-cols-4">
         <div className="company-info">
@@ -21,7 +21,7 @@ export const Footer = () => {
             />
           </Link>
 
-          <div className="mt-16">
+          <div className="mt-14">
             <p>
               5th Avenue st, manhattan <br /> New York, NY 10001
             </p>
@@ -34,8 +34,8 @@ export const Footer = () => {
         </div>
 
         {/* contains useful Account */}
-        <div className="resources max-lg:mt-10">
-          <h4 className="text-white font-bold mb-5">Resources</h4>
+        <div className="resources max-lg:mt-4">
+          <h4 className="text-white font-bold mb-7 text-lg font-dosis">Resources</h4>
           <ul className="space-y-2">
             <li className="hover:text-lemon-green">
               <Link href="/">About</Link>
@@ -59,7 +59,7 @@ export const Footer = () => {
         </div>
 
         <div className="legal max-lg:mt-10">
-          <h4 className="text-white font-bold mb-5">Legal</h4>
+          <h4 className="text-white font-bold mb-7 text-lg font-dosis">Legal</h4>
           <ul className="space-y-2">
             <li className="hover:text-lemon-green">
               <Link href="/">Terms of Use </Link>
@@ -74,7 +74,7 @@ export const Footer = () => {
         </div>
 
         <div className="account max-lg:mt-10">
-          <h4 className="text-white font-bold mb-5">Account</h4>
+          <h4 className="text-white font-bold mb-7 text-lg font-dosis">Account</h4>
           <ul className="space-y-2">
             <li className="hover:text-lemon-green">
               <Link href="/">My Account</Link>

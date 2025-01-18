@@ -55,7 +55,7 @@ const VideoList: React.FC<VideoListProps> = ({
           <ChevronUp size={32} />
         </button>
       </div>
-      <div className="overflow-y-auto h-[280px] lg:h-[320px] py-10">
+      <div className="overflow-y-auto h-[280px] lg:h-[320px] pb-10">
         {videos.map((video, index) => (
           <div
             key={video.id}

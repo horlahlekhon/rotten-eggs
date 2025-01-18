@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 export const Spotlight: React.FC<SpotlightProps> = () => {
   return (
     <div className="py-16 uppercase">
-      <h4 className="font-bold text-white text-lg border-b pb-5 mb-5 border-b-[#405266]">
+      <h4 className="font-bold text-white text-lg border-b pb-3 mb-5 border-b-[#405266]">
         Spotlight celebrities
       </h4>
 

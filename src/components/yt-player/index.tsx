@@ -43,7 +43,7 @@ const YtPlayer = () => {
 
   return (
     <div>
-      <div className="mb-6 flex justify-between items-center uppercase">
+      <div className="mb-6 flex justify-between items-center uppercase font-bold">
         <h2 className="text-white text-2xl">in theater</h2>
         <Link href="#" className="flex items-center">
           View all <ChevronRight size={14} />

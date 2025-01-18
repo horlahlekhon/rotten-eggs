@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Dosis } from "next/font/google";
+import { Dosis, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/navigation/header";
 import { Footer } from "@/components/layout/footer";
@@ -9,8 +9,8 @@ const dosisSans = Dosis({
   subsets: ["latin"],
 });
 
-const dosisMono = Dosis({
-  variable: "--font-dosis",
+const nunitoSans = Nunito_Sans({
+  variable: "--font-nunito",
   subsets: ["latin"],
 });
 
@@ -27,7 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dosisSans.variable} ${dosisMono.variable} antialiased`}
+        className={`${dosisSans.variable} ${nunitoSans.variable} antialiased`}
+        suppressHydrationWarning={true}
       >
         <Header />
         {children}

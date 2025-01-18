@@ -25,28 +25,11 @@
     --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
     --lemon-green: #dcf836;
+    --light-blue: #0f2133;
+    --pink: #dd003f;
+    --sky-blue: #4280bf;
   }
-  .dark {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
+
 }
 
 @layer base {
@@ -57,7 +40,7 @@
   body {
     color: var(--foreground);
     background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-dosis), sans-serif;
   }
 
   a, p, span, h1, h2, h3, h4, h5, h6 {
@@ -72,6 +55,28 @@
   iframe {
     width: 100% !important;
   }
+
+ input, select, textarea {
+  font-family: var(--font-nunito), sans-serif;
+ }
+
+ .centralize{
+   @apply flex justify-center items-center;
+ }
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .hide-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+  }
+
+
 }
 
 .slick-dots {
@@ -106,4 +111,20 @@
   color: white !important;
 }
 
+#search-form label {
+  font-weight: bold;
+  font-family: var(--font-dosis), sans-serif;
+}
 
+#search-form input, #search-form select, #search-form textarea {
+  color: var(--foreground);
+  background: #233a50;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 6px 12px;
+  font-size: 12px;
+  margin: 10px 0;
+  height: 40px;
+  width: 100%;
+  outline: none;
+}

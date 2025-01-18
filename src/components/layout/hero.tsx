@@ -1,17 +1,21 @@
 import React from "react";
 import MovieSlider from "@/components/ui/movie-slider";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import { TiSocialGooglePlus } from "react-icons/ti";
 import { LucideSearch } from "lucide-react";
+import { ReactNode } from "react";
 
-const Hero = () => {
+interface HeroProps {
+children: ReactNode;
+bgImg?: string;
+}
+
+const Hero:React.FC<HeroProps> = ({ children, bgImg }) => {
   return (
-    <div className="slider bg-[url('/images/slider-bg.jpg')] bg-cover bg-center bg-no-repeat text-center relative max-lg:pt-52 pt-28 flex items-center md:pb-0">
-      <div className="mx-auto xs:px-24 w-full">
+    <div 
+    style={{ backgroundImage: `url(${bgImg || '/images/slider-bg.jpg'})` }}
+    className="slider bg-cover bg-center bg-no-repeat text-center relative max-lg:pt-52 pt-28 flex items-center md:pb-0">
+      <div className="mx-auto sm:px-24 w-full">
         <div className="top-search w-full max-lg:hidden text-sm h-12 flex items-center space-x-2 mt-4 bg-[#233a50] border-4 border-[#020d18] rounded-md">
           <select className="w-[20%] uppercase rounded px-2 py-1 bg-[#233a50] outline-none">
             <option value="united">TV show</option>
@@ -29,22 +33,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="social-link xs:px-8 text-white flex items-center justify-end relative top-0 left-0 mt-4 mr-4">
-          <p className="mr-2 text-[16px]">Follow us: </p>
-          <a href="#" className="mr-2">
-            <FaFacebookF />
-          </a>
-          <a href="#" className="mr-2">
-            <FaTwitter />
-          </a>
-          <a href="#" className="mr-2">
-            <TiSocialGooglePlus />
-          </a>
-          <a href="#">
-            <FaYoutube />
-          </a>
-        </div>
-        <MovieSlider />
+        {children}
       </div>
     </div>
   );

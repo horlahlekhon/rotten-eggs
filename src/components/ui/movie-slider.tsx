@@ -8,74 +8,9 @@ import { IoStar } from "react-icons/io5";
 import { Movie, MovieSliderProps } from "@/types";
 import Link from "next/link";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { movies } from "@/lib/data";
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
-
-const movies: Movie[] = [
-  {
-    id: 1,
-    title: "The Walk",
-    image: "/images/movies/slider4.jpg",
-    genre: ["Sci-fi", "Adventure"],
-    rating: 4.5,
-  },
-  {
-    id: 2,
-    title: "The Walk",
-    image: "/images/movies/slider4.jpg",
-    genre: ["Sci-fi", "Adventure"],
-    rating: 4.0,
-  },
-  {
-    id: 3,
-    title: "The Walk",
-    image: "/images/movies/slider4.jpg",
-    genre: ["Sci-fi", "Adventure"],
-    rating: 3.5,
-  },
-  {
-    id: 4,
-    title: "The Walk",
-    image: "/images/movies/slider4.jpg",
-    genre: ["Sci-fi", "Adventure"],
-    rating: 4.2,
-  },
-  {
-    id: 5,
-    title: "The Walk",
-    image: "/images/movies/slider4.jpg",
-    genre: ["Sci-fi", "Adventure"],
-    rating: 3.8,
-  },
-  {
-    id: 6,
-    title: "The Walk",
-    image: "/images/movies/slider4.jpg",
-    genre: ["Sci-fi", "Adventure"],
-    rating: 4.7,
-  },
-  {
-    id: 7,
-    title: "The Walk",
-    image: "/images/movies/slider4.jpg",
-    genre: ["Sci-fi", "Adventure"],
-    rating: 4.1,
-  },
-  {
-    id: 8,
-    title: "The Walk",
-    image: "/images/movies/slider4.jpg",
-    genre: ["Sci-fi", "Adventure"],
-    rating: 3.9,
-  },
-  {
-    id: 9,
-    title: "The Walk",
-    image: "/images/movies/slider4.jpg",
-    genre: ["Sci-fi", "Adventure"],
-    rating: 4.3,
-  },
-];
 
 
 const MovieSlider: React.FC<MovieSliderProps> = ({ autoplay = true, layout = "bottom", width = "220px", height = "340px" }) => {
@@ -112,15 +47,15 @@ const MovieSlider: React.FC<MovieSliderProps> = ({ autoplay = true, layout = "bo
               margin: layout === 'top' ? '' : '0 auto', // Center the image
             }}
           >
-            <div className="absolute bottom-8 ml-10 mb-10 left-2 text-xs text-white">
+            <div className={`absolute bottom-8 left-2 text-xs text-white  ${layout === 'bottom' && 'ml-10 mb-10'}`}>
               <div className="w-max font-bold bg-[#1692bb] rounded-sm text-xs px-2 py-1">
-                {movie?.genre[0]}
+                {movie?.genre?.[0] ?? 'Others'}
               </div>
               <Link href="/movies" className="font-bold mt-2 text-lg">{movie.title}</Link>
-              <p className="flex text-lg">
-                <IoStar className="text-[#f5b50a] w-5 h-5" />
-                <span>{movie.rating}</span>/10
-              </p>
+               <div className="text-sm flex items-center ">
+                  <IoStar className="text-[#f5b50a]" size={20} />
+                  <p className="inline ml-1 mt-1"> <span className="text-lg text-white font-nunito">8.1</span>/10</p>
+               </div>
             </div>
           </div>
         </div>

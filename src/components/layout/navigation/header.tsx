@@ -1,5 +1,8 @@
 "use client";
 
+import Login from "@/components/auth/login";
+import Signup from "@/components/auth/signup";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { LucideMenu, LucideX } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,9 +15,9 @@ export default function Header() {
     const handleScroll = () => {
       const header = document.getElementById("header-ctn");
       if (window.scrollY > 0) {
-        header?.classList.add("bg-[#0f2133]", "lg:py-0");
+        header?.classList.add("bg-light-blue");
       } else {
-        header?.classList.remove("bg-[#0f2133]", "lg:py-0");
+        header?.classList.remove("bg-light-blue");
       }
     };
 
@@ -32,14 +35,13 @@ export default function Header() {
     <div className="relative" id="header">
       <header
         id="header-ctn"
-        className="fixed lg:px-20 lg:py-8 top-0 w-full z-50 transition-all duration-500 ease-out max-lg:bg-[#0f2133]"
+        className="fixed lg:px-20 lg:pt-6 top-0 w-full z-[2000] transition-all duration-500 ease-out max-lg:bg-light-blue"
       >
         <div className="container mx-auto py-2 px-4">
           <nav className="navbar navbar-default navbar-custom lg:grid grid-cols-[120px_1fr] gap-5 items-center">
             <div className="navbar-header logo max-lg:flex items-center justify-between">
               <Link href="/">
                 <Image
-                  className="w-max"
                   src="/images/logo1.png"
                   alt="nav logo"
                   width={119}
@@ -80,12 +82,33 @@ export default function Header() {
                 <li></li>
               </ul>
               <div className="auth lg:flex gap-3 items-center justify-center">
-                <Link href="/login">Login</Link>
-                <button className="bg-[#dd003f] py-2 text-white rounded-full w-full max-lg:mt-5 uppercase">
-                  <Link href="/signup" className="hover:text-white">
+              <Dialog>
+              <DialogTrigger asChild>
+                <button className="w-full">LOG IN</button>
+                 </DialogTrigger>
+                 <DialogContent className="w-full p-0 sm:rounded-none md:w-[430px] md:h-[500px] bg-white">
+                            <DialogHeader className="hidden">
+                              <DialogTitle></DialogTitle>
+                            </DialogHeader>
+                            <Login />
+                          </DialogContent>
+                        </Dialog>
+              <Dialog>
+              <DialogTrigger asChild>
+              <button className="bg-pink py-2 text-white rounded-full w-full max-lg:mt-5 uppercase">
+                  <p className="hover:text-white">
                     Sign up
-                  </Link>
+                  </p>
                 </button>
+                 </DialogTrigger>
+                 <DialogContent className="w-full p-0 sm:rounded-none md:w-[430px] bg-white">
+                            <DialogHeader className="hidden">
+                              <DialogTitle></DialogTitle>
+                            </DialogHeader>
+                            <Signup />
+                          </DialogContent>
+                        </Dialog>
+              
               </div>
             </div>
           </nav>
