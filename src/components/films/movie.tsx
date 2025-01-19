@@ -13,7 +13,7 @@ interface MovieCardProps {
 export const MovieCard:React.FC<MovieCardProps> = ({ isGridView, movie }) => {
   return (
     <div
-      className={`grid grid-cols-1 max-xs:w-full max-md:w-[300px] max-lg:mx-auto gap-4 ${isGridView ? 'lg:grid-cols-[170px] mt-5' : 'md:grid-cols-[170px_1fr] my-10'}`}
+      className={`grid grid-cols-1 max-xs:w-full max-md:w-[300px] max-lg:mx-auto gap-4 ${isGridView ? 'lg:grid-cols-[170px]' : 'md:grid-cols-[170px_1fr]'}`}
     >
       <div className="movie-card mx-auto w-full max-lg:w-[170px] h-[260px] relative">
         <Image

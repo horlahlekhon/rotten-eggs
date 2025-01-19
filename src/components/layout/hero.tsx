@@ -4,17 +4,19 @@ import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import { TiSocialGooglePlus } from "react-icons/ti";
 import { LucideSearch } from "lucide-react";
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface HeroProps {
-children: ReactNode;
+children?: ReactNode;
 bgImg?: string;
+className?:string;
 }
 
-const Hero:React.FC<HeroProps> = ({ children, bgImg }) => {
+const Hero:React.FC<HeroProps> = ({ children, bgImg, className }) => {
   return (
     <div 
     style={{ backgroundImage: `url(${bgImg || '/images/slider-bg.jpg'})` }}
-    className="slider bg-cover bg-center bg-no-repeat text-center relative max-lg:pt-52 pt-28 flex items-center md:pb-0">
+    className={cn("slider bg-cover bg-center bg-no-repeat text-center relative max-lg:pt-52 pt-28 flex items-center md:pb-0", className)}>
       <div className="mx-auto sm:px-24 w-full">
         <div className="top-search w-full max-lg:hidden text-sm h-12 flex items-center space-x-2 mt-4 bg-[#233a50] border-4 border-[#020d18] rounded-md">
           <select className="w-[20%] uppercase rounded px-2 py-1 bg-[#233a50] outline-none">

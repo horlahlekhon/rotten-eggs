@@ -43,7 +43,7 @@
     font-family: var(--font-dosis), sans-serif;
   }
 
-  a, p, span, h1, h2, h3, h4, h5, h6 {
+  a, p, span, h1, h2, h3, h4, h5, h6, label {
     font-size: 14px;
   }
 
@@ -60,9 +60,16 @@
   font-family: var(--font-nunito), sans-serif;
  }
 
+
+ button{
+  @apply transition-all duration-500 ease-out;
+ }
+
  .centralize{
    @apply flex justify-center items-center;
  }
+
+
 }
 
 @layer utilities {

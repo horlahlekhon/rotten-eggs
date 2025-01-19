@@ -73,7 +73,7 @@ export const Movies = () => {
           </div>
 
           <div
-            className={`grid ${isGridView ? "grid-cols-3 xl:grid-cols-4 max-lg:grid-cols-1" : "grid-cols-1"}`}
+            className={`grid mt-10 ${isGridView ? "grid-cols-3 xl:grid-cols-4 max-lg:grid-cols-1" : "grid-cols-1"}`}
           >
             {movies.map((movie: MovieType) => (
               <MovieCard key={movie.id} movie={movie} isGridView={isGridView} />
