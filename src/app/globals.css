@@ -86,6 +86,10 @@
 
 }
 
+.container{
+  @apply max-w-full 2xl:mx-auto 2xl:max-w-[1500px];
+ }
+ 
 .slick-dots {
   position: initial !important;
   margin-left: 100px !important;

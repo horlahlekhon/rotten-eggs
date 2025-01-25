@@ -38,9 +38,7 @@ const ReviewTab = () => {
           <Review />
         </div>
       ))}
-    </div>
-
-    <div className="text-sm font-nunito topbar-filter flex max-md:flex-col max-md:py-4 max-md:mx-auto justify-between items-center gap-2 border-y border-[#405266]">
+        <div className="text-sm font-nunito topbar-filter flex max-md:flex-col max-md:py-4 max-md:mx-auto justify-between items-center gap-2 border-y border-[#405266]">
       <p>Reviews per page:</p>
 
       <select className="p-2 bg-[#020d18] max-md:border md:border-x border-[#405266] text-white outline-none">
@@ -64,6 +62,9 @@ const ReviewTab = () => {
         </div>
       </div>
     </div>
+    </div>
+
+  
   </div>
   )
 }

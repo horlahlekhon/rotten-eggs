@@ -18,7 +18,7 @@ const Hero:React.FC<HeroProps> = ({ children, bgImg, className }) => {
     style={{ backgroundImage: `url(${bgImg || '/images/slider-bg.jpg'})` }}
     className={cn("slider bg-cover bg-center bg-no-repeat text-center relative max-lg:pt-52 pt-28 flex items-center md:pb-0", className)}>
       <div className="mx-auto sm:px-24 w-full">
-        <div className="top-search w-full max-lg:hidden text-sm h-12 flex items-center space-x-2 mt-4 bg-[#233a50] border-4 border-[#020d18] rounded-md">
+        <div className="container top-search w-full max-lg:hidden text-sm h-12 flex items-center space-x-2 mt-4 bg-[#233a50] border-4 border-[#020d18] rounded-md">
           <select className="w-[20%] uppercase rounded px-2 py-1 bg-[#233a50] outline-none">
             <option value="united">TV show</option>
             <option value="saab">Others</option>
@@ -35,7 +35,9 @@ const Hero:React.FC<HeroProps> = ({ children, bgImg, className }) => {
           </div>
         </div>
 
-        {children}
+        <div className="container">
+          {children}
+        </div>
       </div>
     </div>
   );

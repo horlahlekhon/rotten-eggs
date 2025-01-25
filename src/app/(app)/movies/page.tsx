@@ -28,7 +28,7 @@ export const Movies = () => {
         </div>
       </Hero>
 
-      <div className="lg:grid grid-cols-[1fr_0.4fr] gap-10 p-20 max-xs:p-0 sm:px-10 lg:px-20  max-xs:my-5">
+      <div className="container lg:grid grid-cols-[1fr_0.4fr] gap-10 p-20 max-xs:p-0 sm:px-10 lg:px-20  max-xs:my-5">
         <div className="text-sm">
           <div className="font-nunito topbar-filter flex max-lg:flex-col max-lg:space-y-5 max-lg:py-4 max-lg:mx-auto justify-between items-center gap-2 border-y border-[#405266]">
             <p>

@@ -28,7 +28,7 @@ export default function Home() {
         <MovieSlider />
       </Hero>
 
-      <div className="px-8 lg:px-20">
+      <div className="container px-8 lg:px-20">
         <div className="lg:grid grid-cols-[650px_300px] xl:grid-cols-[800px_300px] 2xl:grid-cols-2 gap-10">
           <div>
             <MovieTab title="in theater" link="/movies" />
@@ -40,7 +40,9 @@ export default function Home() {
       </div>
 
       <div className="p-16 bg-[#06121e] mb-44">
-        <YtPlayer />
+        <div className="container">
+          <YtPlayer />
+        </div>
       </div>
     </>
   );

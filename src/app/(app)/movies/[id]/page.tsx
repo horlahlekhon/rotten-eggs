@@ -50,7 +50,7 @@ const MovieDetails = () => {
   return (
     <div
       ref={contentRef}
-      className="relative max-lg:mb-0"
+      className="relative container max-lg:mb-0"
       style={{
         marginBottom: `calc(100vh + ${contentHeight}px)`, // Dynamically adjust margin
       }}
@@ -157,8 +157,6 @@ const MovieDetails = () => {
               <RelatedMoviesTab />
             </TabsContent>
 
-            {/* <TabsContent value="overview"></TabsContent>
-          <TabsContent value="overview"></TabsContent> */}
           </Tabs>
         </section>
       </section>
